@@ -41,6 +41,10 @@ PostgreSQL
 |ThreadId|FK to Thread Id| reference to Id of thread this comment is in|
 |ParentId|FK to Id of parent comment or Null|referene to parent comment|
 
+### Trinkit
+|name|field|description|
+|---|---|---|
+||
 
 ## Table Map
 ```puml

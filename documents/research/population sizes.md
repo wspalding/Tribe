@@ -23,6 +23,15 @@
 - very close personal connections
 - users should be able to easliy talk with anyone they are in a band with
 
+## Sibling Tribes
+- if a tribe reaches is maximum size, but there are still members wanting to join, a sibling tribe will be created. 
+- sibling tribe will automatically invite members from original tribe to join
+- moving between sibling tribes is possible? 
+- getting banned from on sibling does not ban from all siblings
+- sibling tribes can cut themselves off from all other siblings
+- 
+
+
 
 # Messaging
 
