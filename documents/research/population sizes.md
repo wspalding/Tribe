@@ -11,6 +11,7 @@
 - tribe should form their own culture over time
 - should not be so large that self governance breaks down
 - users should have simmilar core values
+- should contain people with a diverse set of occupations
 
 ## Social Group (~25)
 - users that commonly find themselves talking about simmilar topics and interests. 
@@ -22,9 +23,27 @@
 - very close personal connections
 - users should be able to easliy talk with anyone they are in a band with
 
+## Sibling Tribes
+- if a tribe reaches is maximum size, but there are still members wanting to join, a sibling tribe will be created. 
+- sibling tribe will automatically invite members from original tribe to join
+- moving between sibling tribes is possible? 
+- getting banned from on sibling does not ban from all siblings
+- sibling tribes can cut themselves off from all other siblings
+- 
 
 
+
+# Messaging
+
+## Threads
+
+## Private Messages
+
+## Public Messages
+
+## Free chat
 
 # Useful links
 - https://www.reddit.com/r/AskAnthropology/comments/587eeb/what_would_the_average_population_of_a/
 - https://royalsocietypublishing.org/doi/abs/10.1098/rspb.2007.0564
+- https://www.aei.org/articles/religion-creates-community/#:~:text=Rabbi%20Jonathan%20Sacks%20has%20observed,that%20help%20build%20community%20and

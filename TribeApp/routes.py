@@ -1,6 +1,5 @@
 
 from flask import render_template
-
 from TribeApp import app
 
 

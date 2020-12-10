@@ -1,1 +1,1 @@
-from TribeApp import app
+from TribeApp import app, db
