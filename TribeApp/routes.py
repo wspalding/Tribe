@@ -10,13 +10,12 @@ def index():
     return render_template('index.html', username='person1')
 
 
-
-
-
-@app.route('/' methods=['GET'])
-def test_api()
+@app.route('/test', methods=['GET'])
+def test_api():
     response = {
-        "value1": "hello",
-        "value2": "world"
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
     }
     return jsonify(response)
+
