@@ -16,4 +16,3 @@ class Tribe(db.Model):
                         nullable=False)
     name = db.Column(db.String(64), index=True)
     slug = db.Column(db.String(64), unique=True)
-    members = relationship('User', back_populates='User')

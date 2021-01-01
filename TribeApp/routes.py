@@ -33,7 +33,6 @@ def test_api():
 @app.route('/tribe/create', methods=['POST'])
 def create_tribe():
     tribe = loads(request.data)
-    print(tribe)
     try:
         new_tribe = Tribe(
             name=tribe['name'],
