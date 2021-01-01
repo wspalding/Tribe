@@ -1,8 +1,14 @@
 
 from flask import render_template
-from flask import jsonify
-from TribeApp import app
+from flask import jsonify, request
+from flask_sqlalchemy import SQLAlchemy
 
+from TribeApp import app
+from TribeApp.Models.TribeModel import Tribe
+
+from json import loads
+
+db = SQLAlchemy(app)
 
 @app.route('/')
 @app.route('/index')
@@ -10,6 +16,9 @@ def index():
     return render_template('index.html', username='person1')
 
 
+
+
+# ! API
 @app.route('/test', methods=['GET'])
 def test_api():
     response = {
@@ -19,3 +28,19 @@ def test_api():
     }
     return jsonify(response)
 
+
+
+@app.route('/tribe/create', methods=['POST'])
+def create_tribe():
+    tribe = loads(request.data)
+    print(tribe)
+    try:
+        new_tribe = Tribe(
+            name=tribe['name'],
+            slug='test'
+        )
+        db.session.add(new_tribe)
+        db.session.commit()
+        return jsonify("it worked")
+    except Exception as e:
+        return jsonify("error creating Tribe, error: {}".format(e))

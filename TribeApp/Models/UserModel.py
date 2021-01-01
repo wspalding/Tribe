@@ -17,5 +17,8 @@ class User(db.Model):
     username = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
-    tribe_id = Column(UUID(as_uuid=True), ForeignKey('Tribe.id'))
+    tribe_id = Column(UUID(as_uuid=True), 
+                            ForeignKey('Tribe.id'), 
+                            nullable=True,
+                            default=None)
     tribe = relationship('Tribe')
