@@ -21,4 +21,3 @@ class User(db.Model):
                             ForeignKey('Tribe.id'), 
                             nullable=True,
                             default=None)
-    tribe = relationship('Tribe')

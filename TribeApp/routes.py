@@ -36,10 +36,11 @@ def create_tribe():
     try:
         new_tribe = Tribe(
             name=tribe['name'],
-            slug='test'
+            slug=tribe['slug']
         )
         db.session.add(new_tribe)
         db.session.commit()
-        return jsonify("it worked")
     except Exception as e:
         return jsonify("error creating Tribe, error: {}".format(e))
+
+    return jsonify(new_tribe.members)
