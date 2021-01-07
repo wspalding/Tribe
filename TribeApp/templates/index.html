@@ -6,6 +6,12 @@
         {% include "TribeNavigationPartials/MainNavigationPartial.html" %}
         <div>
             <p>this is where things will go</p>
+
+
+            {% with value=tribes %}
+                {% include "TribeThumbnailPartials/TribeIndexPageThumbnailPartial.html" %}
+            {% endwith %}
+            
         </div>
     </div>
 </body>

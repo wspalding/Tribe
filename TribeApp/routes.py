@@ -13,7 +13,8 @@ db = SQLAlchemy(app)
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html', username='person1')
+    tribes = Tribe.query.all()
+    return render_template('index.html', tribes=tribes)
 
 
 
@@ -36,7 +37,6 @@ def create_tribe():
     try:
         new_tribe = Tribe(
             name=tribe['name'],
-            slug=tribe['slug']
         )
         db.session.add(new_tribe)
         db.session.commit()
@@ -44,3 +44,4 @@ def create_tribe():
         return jsonify("error creating Tribe, error: {}".format(e))
 
     return jsonify(new_tribe.members)
+

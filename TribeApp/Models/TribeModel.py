@@ -2,6 +2,7 @@ from TribeApp import db
 
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy import Table, Column, Integer, ForeignKey
+from sqlalchemy.types import ARRAY
 from sqlalchemy.orm import relationship
 
 from sqlalchemy.ext.declarative import declarative_base 
@@ -19,3 +20,13 @@ class Tribe(db.Model):
     members = db.relationship('User', 
                                 backref='Tribe', 
                                 lazy=True)
+    posersonality_vector = db.Column(ARRAY(Integer, dimensions=5), 
+                                        nullable=True, 
+                                        default=None)
+
+    def __init__(self, name):
+        self.name = name
+        self.slug = self.create_slug(name)
+
+    def create_slug(self, name):
+        return name.title().replace(' ', '')
