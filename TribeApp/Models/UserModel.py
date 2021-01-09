@@ -1,4 +1,5 @@
 from TribeApp import db
+from flask_login import UserMixin
 
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy import Table, Column, Integer, ForeignKey
@@ -7,7 +8,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 import uuid
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     __tablename__ = 'User'
     id = db.Column(UUID(as_uuid=True), 
                         primary_key=True, 
