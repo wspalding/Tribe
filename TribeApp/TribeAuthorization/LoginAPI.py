@@ -22,6 +22,7 @@ def sign_up():
     email = body.get('email')
     username = body.get('username')
     password = body.get('password')
+    new_user = User()
     return jsonify({
         'email': email,
         'username': username,
