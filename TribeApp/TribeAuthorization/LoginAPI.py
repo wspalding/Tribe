@@ -1,12 +1,9 @@
-from flask import Blueprint
 from flask import jsonify
 from flask_login import current_user, login_user
 from flask import request
+from TribeApp.TribeAuthorization import auth_routes
 
-# from TribeApp.Models.UserModel import User
-
-
-auth_routes = Blueprint('auth_routes', __name__)
+from TribeApp.models import User
 
 @auth_routes.route('/login', methods=['GET', 'POST'])
 def test_api():
