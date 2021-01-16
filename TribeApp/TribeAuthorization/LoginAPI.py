@@ -1,5 +1,5 @@
 from flask import jsonify
-from flask_login import current_user, login_user
+from flask_login import current_user, login_user, logout_user
 from flask import request, redirect, url_for
 from TribeApp.TribeAuthorization import auth_routes
 
@@ -39,3 +39,10 @@ def signup():
     db.session.add(new_user)
     db.session.commit()
     return json_response(success=True, message='Success')
+
+
+
+@auth_routes.route('/logout')
+def logout():
+    logout_user()
+    return json_response(success=True, message='user has been logged out')

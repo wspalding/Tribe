@@ -50,6 +50,10 @@ function login(username, password, remember_me)
         })
     })
     .done(function(response) {
+        if(response.success)
+        {
+            console.log('success')
+        }
         console.log(response)
     })
     .fail(function(error) {

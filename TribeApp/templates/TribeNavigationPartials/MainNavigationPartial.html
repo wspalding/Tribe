@@ -10,15 +10,24 @@
 <div id="login-modal" class="modal">
     <div id="login-modal-content" class="modal-content">
 
-        <!--login form-->
-        {% include "TribeFormPartials/RegistrationFormPartial.html" %}
-        
-        <!--signup form-->
-        {% include "TribeFormPartials/LoginFormPartial.html" %}
+        {% if current_user.is_authenticated %}
 
-        <!--Profile form-->
-        <div id="user-profile-form">
+            <!--Profile form-->
+            {% include "TribeUserPartials/TribeUserProfilePartial.html" %}
+
+        {% else %}
+
+            <div>
+                <!--login form-->
+                {% include "TribeFormPartials/RegistrationFormPartial.html" %}
+            </div>
             
-        </div>
+            <div>
+                <!--signup form-->
+                {% include "TribeFormPartials/LoginFormPartial.html" %}
+            </div>
+            
+        {% endif %}
+
     </div>
 </div>
