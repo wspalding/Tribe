@@ -11,43 +11,10 @@
     <div id="login-modal-content" class="modal-content">
 
         <!--login form-->
-        <div id="login-form">
-            <form action="" method="post">
-                <div class="row">
-                    Login
-                </div>
-                <div class="row">
-                    <input type="text" placeholder="username">
-                </div>
-                <div class="row">
-                    <input type="password" placeholder="password">
-                </div>
-                <div class="row">
-                    <input type="submit">
-                </div>
-            </form>
-        </div>
+        {% include "TribeFormPartials/RegistrationFormPartial.html" %}
         
         <!--signup form-->
-        <div id="signup-form">
-            <form action="" method="post">
-                <div class="row">
-                    Sign up
-                </div>
-                <div class="row">
-                    <input type="text" placeholder="email" id="signup-email-feild">
-                </div>
-                <div class="row">
-                    <input type="text" placeholder="username" id="signup-username-feild">
-                </div>
-                <div class="row">
-                    <input type="password" placeholder="password" id="signup-password-feild">
-                </div>
-                <div class="row">
-                    <input type="submit" id="signup-submit-feild">
-                </div>
-            </form>
-        </div>
+        {% include "TribeFormPartials/LoginFormPartial.html" %}
 
         <!--Profile form-->
         <div id="user-profile-form">

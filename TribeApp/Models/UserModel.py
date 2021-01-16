@@ -26,12 +26,14 @@ class User(UserMixin, db.Model):
     tribe_id = Column(UUID(as_uuid=True), ForeignKey('Tribe.id'),
                         nullable=True,
                         default=None)
-    tribe = relationship('Tribe')
+    # tribe = relationship('Tribe')
 
     def __init__(self, username, email, password):
         self.username = username
+        self.display_name = username
         self.email = email
         self.set_password(password)
+        self.is_verified = False
         
 
     def set_password(self, password):

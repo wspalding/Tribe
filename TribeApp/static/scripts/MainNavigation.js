@@ -22,12 +22,12 @@ function initLoginForm() {
 }
 
 function initSignUpForm() {
-    $('#signup-submit-feild').submit(function(event){
-        var email = $('#signup-email-feild').val()
-        var username = $('#signup-username-feild').val()
-        var password = $('#signup-password-feild').val()
-        console.log(email, username, password)
-        signup(email, username, password)
+    $('#signup-form').on('submit', function(event){
+        var email = $('#signup-email-feild').val();
+        var username = $('#signup-username-feild').val();
+        var password = $('#signup-password-feild').val();
+        signup(email, username, password);
+        return false;
     })
 }
 
@@ -44,10 +44,15 @@ function logout()
 
 function signup(email, username, password)
 {
-    $.post('/auth/signup', {
-        email: email,
-        username: username,
-        password: password
+    $.ajax({
+        type: 'POST',
+        url: '/auth/signup', 
+        contentType: 'application/json',
+        data : JSON.stringify({
+            email: email,
+            username: username,
+            password: password
+        })
     })
     .done(function(response) {
         console.log(response)
