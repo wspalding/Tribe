@@ -17,7 +17,12 @@ function initLoginModal(){
 }
 
 function initLoginForm() {
-    $('#login-form').on('click', function(event){
+    $('#login-form').on('submit', function(event){
+        var username = $('#login-username-field').val();
+        var password = $('#login-password-field').val();
+        var remember_me = $('#login-remember-me-field').val();
+        login(username, password, remember_me);
+        return false;
     }) 
 }
 
@@ -32,9 +37,24 @@ function initSignUpForm() {
 }
 
 
-function login()
+function login(username, password, remember_me)
 {
-    
+    $.ajax({
+        type: 'POST',
+        url: '/auth/login', 
+        contentType: 'application/json',
+        data : JSON.stringify({
+            remember_me: remember_me,
+            username: username,
+            password: password
+        })
+    })
+    .done(function(response) {
+        console.log(response)
+    })
+    .fail(function(error) {
+        console.log(error)
+    })
 }
 
 function logout()

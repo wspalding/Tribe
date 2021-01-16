@@ -7,24 +7,28 @@ from TribeApp.Models.UserModel import User
 from TribeApp import db
 
 @auth_routes.route('/login', methods=['GET', 'POST'])
-def test_api():
-    username = request.data['username']
-    password = request.data['password']
+def login():
+    body = request.get_json()
+    username = body.get('username')
+    password = body.get('password')
+    remember_me = body.get('remember_me')
     user = User.query.filter_by(username=username).first()
     if user is None or not user.check_password(password):
         return jsonify({
             'success': False
             })
-    login_user(user, remember=remember_me.data)
+    login_user(user, remember=remember_me)
     return jsonify({
         'success': True
         })
 
 
 @auth_routes.route('/signup', methods=['GET', 'POST'])
-def sign_up():
+def signup():
     if current_user.is_authenticated:
-        return redirect(url_for('index'))
+        return jsonify({
+            'success': False
+        })
     body = request.get_json()
     email = body.get('email')
     username = body.get('username')
