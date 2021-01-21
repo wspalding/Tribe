@@ -28,6 +28,9 @@ class User(UserMixin, db.Model):
                         nullable=True,
                         default=None)
     # tribe = relationship('Tribe')
+    posersonality_vector = db.Column(ARRAY(Integer, dimensions=5), 
+                                    nullable=True, 
+                                    default=None)
 
     def __init__(self, username, email, password):
         self.username = username
