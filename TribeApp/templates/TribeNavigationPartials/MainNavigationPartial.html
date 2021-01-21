@@ -9,6 +9,25 @@
 
 <div id="login-modal" class="modal">
     <div id="login-modal-content" class="modal-content">
-    text
+
+        {% if current_user.is_authenticated %}
+
+            <!--Profile form-->
+            {% include "TribeUserPartials/TribeUserProfilePartial.html" %}
+
+        {% else %}
+
+            <div>
+                <!--login form-->
+                {% include "TribeFormPartials/RegistrationFormPartial.html" %}
+            </div>
+            
+            <div>
+                <!--signup form-->
+                {% include "TribeFormPartials/LoginFormPartial.html" %}
+            </div>
+            
+        {% endif %}
+
     </div>
 </div>
