@@ -1,8 +1,12 @@
-<html>
-    <head>
-        <title>Welcome to tribe</title>
-    </head>
-    <body>
-        <h1>find the people right for you!</h1>
-    </body>
-</html>
+{% extends "TribePageBases/DefaultImportsBaseLayout.html" %}
+
+{% block content%}
+<body>
+    <div>
+        {% include "TribeNavigationPartials/MainNavigationPartial.html" %}
+        <div>
+            <p>this is where things will go</p>
+        </div>
+    </div>
+</body>
+{% endblock %}
